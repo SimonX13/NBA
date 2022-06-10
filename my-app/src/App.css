@@ -1,0 +1,29 @@
+.App{
+  flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.App.Pages{
+  padding: 10px;
+  flex: 50%;
+}
+.search-form{
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar{
+  width: 50%;
+  border: none;
+  padding: 10px;
+}
+.search-button{
+  background-color: lightcoral;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+}
