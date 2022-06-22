@@ -3,7 +3,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
 }
 
 .App.Pages{
@@ -26,4 +26,132 @@
   border: none;
   padding: 10px 20px;
   color: white;
+}
+.ConferenceRanking{
+  display: flex;
+  
+}
+.ConferenceRankingChild{
+  flex:1;
+  
+}
+.ConferenceRankingChild :first-child{
+  margin-right: 20px;
+  
+}
+
+.West .East{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modeButton{
+  min-width: 100px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  margin-top: 5ch;
+}
+/* 
+.modeButton::before {
+   content: '';
+    border-radius: 1000px;
+    min-width: calc(100px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+   */
+  .modeButton:hover {
+    color: #313133;
+    /* transform: translateY(-6px); */
+
+    border-radius: 1000px;
+    min-width: calc(100px + 0px);
+    min-height: calc(60px + 0px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+
+  }
+
+  .modeButton:active{
+    transform: scale(0.9);
+    background-color: #e60074;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  }
+/*   
+  .modeButton:hover::before, .modeButton:focus::before {
+    opacity: 1;
+  } */
+  
+/*   
+
+  .modeButton::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }  */
+/*   
+   .modeButton:hover::after, .modeButton:focus::after {
+    animation: none;
+    display: none;
+    border: none;
+  }
+   */
+
+   .modeButton.animate:after{
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+   }
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }

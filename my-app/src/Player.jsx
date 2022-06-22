@@ -14,13 +14,13 @@ const Player = ({ name, rank, logo}) =>{
 
     return(
         <div className="Player">
-            <h2>
-                Team Name: {name}
-            </h2>
-
             <h3>
-                Rank: Number {rank}
+                Team Name: {name}
             </h3>
+
+            <h4>
+                Rank: Number {rank}
+            </h4>
             <img className="teamLogo" src={logo} alt="Images not available" style={imgg} />
         </div>
     );
