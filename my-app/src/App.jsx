@@ -4,16 +4,16 @@ import './App.css';
 import Player from './Player';
 // import Button from 'react-bootstrap/Button';
 // import Col from 'react-bootstrap/Col';
-import { ThemeProvider } from './ThemeContext';
-import Pad from "./Pad";
+// import { ThemeProvider } from './ThemeContext';
+// import Pad from "./Pad";
 
 
 import { useTheme, useThemeUpdate} from "./ThemeContext";
 
 function App() {
 
-  const apiKey = "108981f0eamsh5afe555e5931b1ap1204f7jsn82c1766a32b3"
-  //
+  const apiKey = '108981f0eamsh5afe555e5931b1ap1204f7jsn82c1766a32b3';
+  console.log(apiKey)
 
   // useEffect(() => {
   //   const script = document.createElement('script');
@@ -56,7 +56,7 @@ function App() {
     // iterate through the all the object in the response 
     for(var i=0; i< sorted.length; i++){
       // add to westTeam array if it belongs to west
-      if(sorted[i].conference.name == "west"){
+      if(sorted[i].conference.name === "west"){
         westTeamArray.push(sorted[i]); 
       }
       else{

@@ -17,7 +17,6 @@ const Player = ({ name, rank, logo}) =>{
             <h3>
                 Team Name: {name}
             </h3>
-
             <h4>
                 Rank: Number {rank}
             </h4>
