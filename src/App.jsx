@@ -1,18 +1,14 @@
 
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import './Home.css';
 import Player from './Player';
-// import Button from 'react-bootstrap/Button';
-// import Col from 'react-bootstrap/Col';
-// import { ThemeProvider } from './ThemeContext';
-// import Pad from "./Pad";
-
+ 
 
 import { useTheme, useThemeUpdate} from "./ThemeContext";
 
-function App() {
-
-  const apiKey = '108981f0eamsh5afe555e5931b1ap1204f7jsn82c1766a32b3';
+function Home() {
+  
+  const apiKey = 'a4b6ea87b5mshcfbe2e37e8adfc5p175b81jsnf4a8637b1360';
   console.log(apiKey)
 
   // useEffect(() => {
@@ -33,9 +29,9 @@ function App() {
 
   
 
-  useEffect(()=>{
-    getNBA();
-  },[query]);
+  // useEffect(()=>{
+  //   getNBA();
+  // },[query]);
 
   const getNBA = async()=>{
     
@@ -91,60 +87,58 @@ function App() {
     backgroundImage: darkTheme ?  backgroundImageTwo :backgroundImageOne
   }
   
+  // the left pane will also be visible but depends on the postfix it might route to different files
 
   return (
-    
-    <div className="App" style={themeStyle}>
-      <button className='modeButton' onClick={toggleTheme}>Switch Theme</button>   
-      <div>
-        <h1>Search a year</h1>
-        <form className = "search-form" onSubmit = {getSearch} >
-                  <input className = "search-bar" type="text" value = {search} onChange ={updateSearch}/> 
-                  <button  className='search-button' variant="success" type='submit'>
-                      Search
-                  </button>
-        </form>
-        <h1>
-          NBA conference teams with ranking in {query}
-        </h1>
+    <div className="home" style={themeStyle}>
+          
+     <button className='modeButton' onClick={toggleTheme}>Switch Theme</button>   
+     <div>
+       <h1>Search a year</h1>
+       <form className = "search-form" onSubmit = {getSearch} >
+                 <input className = "search-bar" type="text" value = {search} onChange ={updateSearch}/> 
+                 <button  className='search-button' variant="success" type='submit'>
+                     Search
+                 </button>
+       </form>
+       <h1>
+         NBA conference teams with ranking in {query}
+       </h1>
 
-        {/* <ThemeProvider>
-          <Pad/>
-        </ThemeProvider> */}
-        
-        <div className='ConferenceRanking'>
-          <div className='ConferenceRankingChild West'>
-            <h2>West conference</h2>
-            {
-            teamWest.map(player => (
-              <Player 
-                key={player.team.id}
-                name ={ player.team.name}
-                rank ={player.conference.rank} 
-                logo = {player.team.logo}
-              />
-              
-              ))
-            }
-          </div>
-          <div className='ConferenceRankingChild East'>
-            <h2>East conference</h2>
-            {
-              teamEast.map(player => (
-                <Player 
-                  key={player.team.id}
-                  name ={ player.team.name}
-                  rank ={player.conference.rank} 
-                  logo = {player.team.logo}
-                />
-                
-                ))
-            }
-          </div>
-        </div>
-      </div>
+ 
+       
+       <div className='ConferenceRanking'>
+         <div className='ConferenceRankingChild West'>
+           <h2>West conference</h2>
+           {
+           teamWest.map(player => (
+             <Player 
+               key={player.team.id}
+               name ={ player.team.name}
+               rank ={player.conference.rank} 
+               logo = {player.team.logo}
+             />
+             
+             ))
+           }
+         </div>
+         <div className='ConferenceRankingChild East'>
+           <h2>East conference</h2>
+           {
+             teamEast.map(player => (
+               <Player 
+                 key={player.team.id}
+                 name ={ player.team.name}
+                 rank ={player.conference.rank} 
+                 logo = {player.team.logo}
+               />
+               ))
+           }
+         </div>
+       </div>
+     </div>     
     </div>
   );
 }
 
-export default App;
+export default Home;
