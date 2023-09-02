@@ -29,9 +29,9 @@ function Home() {
 
   
 
-  // useEffect(()=>{
-  //   getNBA();
-  // },[query]);
+  useEffect(()=>{
+    getNBA();
+  },[query]);
 
   const getNBA = async()=>{
     
